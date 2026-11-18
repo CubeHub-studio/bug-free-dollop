@@ -1,0 +1,39 @@
+name: Package surprise
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "surprise/**"
+      - ".github/workflows/package-surprise.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Prepare download package
+        run: |
+          mkdir -p dist
+          cp surprise/index.html dist/index.html
+          cat > dist/README.txt <<'EOF'
+          Open index.html in Safari to use this standalone experience.
+          It works offline and does not require an account or paid service.
+          If Files previews the source instead of running it, use Share > Open in Safari.
+          EOF
+          cd dist
+          zip -r ../surprise-for-ipad.zip .
+
+      - name: Upload downloadable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: surprise-for-ipad
+          path: surprise-for-ipad.zip
+          if-no-files-found: error
+          retention-days: 30
