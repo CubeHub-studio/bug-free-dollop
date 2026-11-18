@@ -1,0 +1,24 @@
+
+name: Cake Bakery
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  bake:
+    name: Baking a cake
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Preheat oven
+        run: echo "Preheating oven..."
+
+      - name: Mix ingredients
+        run: echo "Mixing ingredients..."
+
+      - name: Bake cake
+        run: echo "Cake is baking!"
+
+      - name: Serve
+        run: echo "Cake is ready!"
