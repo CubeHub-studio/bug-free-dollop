@@ -27,13 +27,11 @@ jobs:
           It works offline and does not require an account or paid service.
           If Files previews the source instead of running it, use Share > Open in Safari.
           EOF
-          cd dist
-          zip -r ../surprise-for-ipad.zip .
 
       - name: Upload downloadable artifact
         uses: actions/upload-artifact@v4
         with:
           name: surprise-for-ipad
-          path: surprise-for-ipad.zip
+          path: dist/
           if-no-files-found: error
           retention-days: 30
