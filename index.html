@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17152b">
+  <title>Custom Pages Demo</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh; margin: 0; display: grid; place-items: center;
+      padding: 24px; color: #f5f3ff;
+      background: radial-gradient(ellipse at top, #39306b, #17152b 65%);
+    }
+    main {
+      width: min(680px, 100%); padding: clamp(28px, 6vw, 52px);
+      border: 1px solid #ffffff24; border-radius: 24px;
+      background: #ffffff0c; box-shadow: 0 24px 80px #0005;
+    }
+    .tag { color: #b9a8ff; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 12px 0; font-size: clamp(2.2rem, 8vw, 4rem); line-height: 1.05; }
+    p { color: #c9c5dc; line-height: 1.7; }
+    a { display: inline-block; margin-top: 14px; padding: 12px 18px; border-radius: 12px; color: #17152b; background: #c4b5fd; font-weight: 700; text-decoration: none; }
+    footer { margin-top: 36px; color: #9690b0; font-size: .85rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="tag">Standalone GitHub Pages</div>
+    <h1>It works.</h1>
+    <p>This page is a plain HTML, CSS, and JavaScript site. It is published by a custom Git-based workflow without Jekyll or GitHub's Pages deployment actions.</p>
+    <a href="https://github.com/CubeHub-studio/bug-free-dollop">View the repository</a>
+    <footer>Deployed from the gh-pages branch.</footer>
+  </main>
+</body>
+</html>
